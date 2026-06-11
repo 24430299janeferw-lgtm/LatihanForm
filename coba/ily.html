@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand Gesture Particle Text</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      overflow:hidden;
+      background:black;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    video{
+      position:absolute;
+      left:20px;
+      top:20px;
+      width:280px;
+      border-radius:20px;
+      transform:scaleX(-1);
+      border:2px solid white;
+      z-index:10;
+    }
+
+    canvas{
+      position:absolute;
+      top:0;
+      left:0;
+    }
+
+    .info{
+      position:absolute;
+      top:20px;
+      width:100%;
+      text-align:center;
+      color:white;
+      font-size:35px;
+      font-weight:bold;
+      text-shadow:0 0 10px cyan;
+      z-index:10;
+    }
+
+    .guide{
+      position:absolute;
+      bottom:20px;
+      width:100%;
+      text-align:center;
+      color:#aaa;
+      font-size:18px;
+      z-index:10;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="info">✌️ Show Peace Gesture</div>
+  <div class="guide">Buat gesture ✌️ di kamera</div>
+
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <!-- MEDIAPIPE -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <script>
+
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let showParticles = false;
+
+    // PARTICLE
+    class Particle{
+      constructor(x,y){
+        this.x = x;
+        this.y = y;
+
+        this.baseX = x;
+        this.baseY = y;
+
+        this.size = Math.random() * 3 + 1;
+
+        this.speedX = (Math.random()-0.5) * 8;
+        this.speedY = (Math.random()-0.5) * 8;
+      }
+
+      update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        this.x += (this.baseX - this.x) * 0.04;
+        this.y += (this.baseY - this.y) * 0.04;
+
+      }
+
+      draw(){
+
+        ctx.fillStyle = "#00ccff";
+
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+
+      }
+    }
+
+    let particles = [];
+
+    function createParticles(){
+
+      const tempCanvas = document.createElement("canvas");
+      const tempCtx = tempCanvas.getContext("2d");
+
+      tempCanvas.width = canvas.width;
+      tempCanvas.height = canvas.height;
+
+      tempCtx.fillStyle = "white";
+      tempCtx.font = "bold 120px Arial";
+      tempCtx.textAlign = "center";
+
+      tempCtx.fillText(
+        "I LOVE YOU",
+        canvas.width / 2,
+        canvas.height / 2
+      );
+
+      const imageData = tempCtx.getImageData(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      particles = [];
+
+      for(let y=0; y<imageData.height; y+=6){
+
+        for(let x=0; x<imageData.width; x+=6){
+
+          const index = (y * 4 * imageData.width) + (x * 4);
+
+          if(imageData.data[index + 3] > 128){
+
+            particles.push(
+              new Particle(x,y)
+            );
+
+          }
+        }
+      }
+    }
+
+    createParticles();
+
+    // ANIMATION
+    function animate(){
+
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+      if(showParticles){
+
+        particles.forEach((particle)=>{
+          particle.update();
+          particle.draw();
+        });
+
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // DETEKSI GESTURE ✌️
+    function detectPeaceGesture(landmarks){
+
+      const indexFingerUp =
+        landmarks[8].y < landmarks[6].y;
+
+      const middleFingerUp =
+        landmarks[12].y < landmarks[10].y;
+
+      const ringFingerDown =
+        landmarks[16].y > landmarks[14].y;
+
+      const pinkyDown =
+        landmarks[20].y > landmarks[18].y;
+
+      return (
+        indexFingerUp &&
+        middleFingerUp &&
+        ringFingerDown &&
+        pinkyDown
+      );
+    }
+
+    // MEDIAPIPE HANDS
+    const hands = new Hands({
+      locateFile: (file)=>{
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+      }
+    });
+
+    hands.setOptions({
+      maxNumHands:1,
+      modelComplexity:1,
+      minDetectionConfidence:0.7,
+      minTrackingConfidence:0.7
+    });
+
+    hands.onResults((results)=>{
+
+      showParticles = false;
+
+      if(results.multiHandLandmarks){
+
+        for(const landmarks of results.multiHandLandmarks){
+
+          if(detectPeaceGesture(landmarks)){
+            showParticles = true;
+          }
+
+        }
+
+      }
+
+    });
+
+    // CAMERA
+    const camera = new Camera(video, {
+      onFrame: async ()=>{
+        await hands.send({image: video});
+      },
+      width:640,
+      height:480
+    });
+
+    camera.start();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            height: 200dvh;
+            width: 100dvw;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        header{
+            flex: 1;
+            background-color: white;
+            gap: 20px;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+
+        }
+
+        header > a{
+            color: peru;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        main{
+            flex:20;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer{
+            flex:1;
+        }
+
+        label{
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding-right: 40px;
+        }
+
+        a{
+            font-size: 20px;
+        }
+
+        .p1{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .p1 > .caption{
+            flex: 1;
+            background-color: black;
+            color: white;
+        }
+
+        .p1 > .caption > p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        @keyframes animasityt {
+        from{color: yellow;}
+        to{color: darkgoldenrod;}
+      }
+      
+        @keyframes animasinss {
+        from{color: rgb(172, 99, 255);}
+        to{color: rgb(25, 5, 71);}
+      }
+
+        @keyframes animasibyd {
+        from{color: rgb(90, 167, 255);}
+        to{color: rgb(10, 39, 100);}
+      }
+
+        @keyframes animasimxs {
+        from{color: rgb(196, 55, 55);}
+        to{color: rgb(73, 16, 16);}
+      }
+
+        @keyframes animasixpg {
+        from{color: rgb(126, 126, 126);}
+        to{color: rgb(0, 0, 0);}
+      }
+
+        .p1 > .judul{
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;           
+        }
+
+        .p1 > .judul > h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;  
+            font-size: 80px;
+            animation: animasityt infinite 4s;
+            
+            transition:
+            font-size 2s,
+            margin-left 2s;
+        }
+
+        .p1 > .gambar{
+            flex: 1;
+            display: flex;
+            background-image: url('image/toyota1.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            transition:
+            flex 2s;
+        }
+
+        .p1 > .gambar:hover{
+            flex: 1.2;
+        }
+
+        .p2{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+        }
+        .p2 > .caption{
+            flex: 1;
+            background-color: black;
+            color: white;
+        }
+
+        .p2 > .caption > p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        .p2 > .judul{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+        }
+        .p2 > .judul > h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 80px;
+            animation: animasinss infinite 4s;
+
+            transition:
+            font-size 2s,
+            margin-left 2s;
+        }
+
+        .p2 > .gambar{
+            flex: 1;
+            background-image: url('image/nissan1.jpg');
+            background-size: contain;
+
+            transition:
+            flex 2s ;
+        }
+
+        .p2 > .gambar:hover{
+            flex: 1.2;
+        }
+
+        .p3{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .p3 > .caption{
+            flex: 1;
+            background-color: black;
+            color: white;
+        }
+
+        .p3 > .caption > p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        .p3 > .judul{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+        }
+        .p3 > .judul > h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 80px;
+            animation: animasibyd infinite 4s;
+            transition:
+            font-size 2s,
+            margin-left 2s;
+        }
+
+        .p3 > .gambar{
+            flex: 1;
+            background-image: url('image/byd1.jpeg');
+            background-size: contain;
+
+            transition:
+            flex 2s ;
+        }
+
+        .p3 > .gambar:hover{
+            flex: 1.2;
+        }
+        .p4{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+        }
+        .p4 > .caption{
+            flex: 1;
+            background-color: black;
+            color: white;
+        }
+        .p4 > .caption > p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        .p4 > .judul{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+        }
+        .p4 > .judul > h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 80px;
+            animation: animasimxs infinite 4s;
+
+            transition:
+            font-size 2s,
+            margin-left 2s;
+        }
+
+        .p4 > .gambar{
+            flex: 1;
+            background-image: url('image/maxus1.jpg');
+            background-size: contain;
+        }
+
+        .p5{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+        }
+        .p5 > .caption{
+            flex: 1;
+            background-color: black;
+            color: white;
+        }
+
+        .p5 > .caption > p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        .p5 > .judul{
+            flex: 1;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+            
+        }
+        .p5 > .judul > h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 80px;
+            animation: animasixpg infinite 4s;
+
+            transition:
+            font-size 2s,
+            margin-left 2s;
+        }
+
+        .judul > h1:hover{
+            font-size: 120px;
+            margin: 50px;
+        }
+        .judul > h2:hover{
+            font-size: 120px;
+            margin: 50px;
+        }
+        .judul > h3:hover{
+            font-size: 120px;
+            margin: 50px;
+        }
+        .judul > h4:hover{
+            font-size: 120px;
+            margin: 50px;
+        }
+        .judul > h5:hover{
+            font-size: 120px;
+            margin: 50px;
+        }
+
+        .p5 > .gambar{
+            flex: 1;
+            background-image: url('image/xpeng1.jpeg');
+            background-size: contain;
+        }
+
+        footer > section{
+            flex: 1;
+            background-color: rgb(141, 14, 14);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 250px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="" width="100px">
+        <label>Indonesia Car Event</label>
+        <a >HOME</a>
+        <a >STORE</a>
+        <a >ABOUT</a>
+    </header>
+    <main>
+        <section class="p1">
+            <section class="judul">
+                <h1>TOYOTA</h1>
+            </section>
+            <section class="caption">
+                <p>
+                    Yang terakhir ada Toyota Alphard Hybrid yakni perpaduan antara kemewahan dan efisiensi. Penggunaan pintu geser pada Toyota Alphard Hybrid terbaru ini memberikan kenyamanan dan efektivitas yang optimal. Pada bagian interiornya, Anda dapat merasakan kenyamanan kursi yang ergonomis dengan bahan berkualitas tinggi.</p>
+                <p>
+                   Di bagian eksteriornya, Toyota Alphard Hybrid menampilkan front grille yang mewah dengan LED headlamp tegas yang mengesankan dan semakin memancarkan kesan elegan. Saat berkendara, terdapat rear side shade yang akan memberikan privasi bagi penumpang di dalam. 
+                </p>
+            </section>
+            <section class="gambar"></section>
+        </section>
+        <section class="p2">
+            <section class="gambar"></section>
+            <section class="judul">
+                <h1>NISSAN</h1>
+            </section>
+            <section class="caption">
+                
+                <p>
+                    Nissan telah menghadirkan Nissan Elgrand di kelas MPV yang sangat digemari banyak orang serta barang bawaan keluarga.</p>
+                <p>
+                   Kelebihan Nissan New Elgrand yang sering kali dilirik oleh para pembeli terletak pada bagian eksterior. Desain eksterior Nissan Elgrand terbaru ini memang banyak mengalami perubahan, terutama pada bagian grille depan yang dirancang jauh lebih besar dengan aksen chrome yang hampir sama dengan pesaingnya. Kemudian juga terpasang desain bumper depan baru serta lampu belakang yang dirancang menyatu dengan garnish chrome pada bagian pintu bagasi membuat penampilannya tampak lebih sporty, tampan, dan mempesona.
+                </p>
+            </section>
+        </section>
+        <section class="p3">
+            <section class="caption">
+                <p>
+                    BYD Denza D9 didesain sebagai kendaraan serba guna (multi-purpose vehicle atau
+                    MPV) dengan tipe minivan, sehingga memiliki ukuran yang besar. Desainnya
+                    mengingatkan pada minivan dari produsen Jepang. Salah satu aspek yang menonjol
+                    dari mobil listrik ini adalah kemewahannya. Eksterior Denza D9 terlihat sangat mewah
+                    dan berbeda dari yang lain.</p>
+                <p>
+                   Kendaraan listrik biasanya memiliki jarak tempuh yang terbatas, namun hal ini tidak
+                    berlaku untuk Denza D9. Mobil ini menggunakan e-platform dari BYD yang dilengkapi
+                    dengan baterai blade. BYD Denza D9 menggunakan baterai berkapasitas 103kWh yang
+                    memungkinkan mobil ini menempuh jarak hingga 620 km.
+                </p>
+            </section>
+            <section class="gambar"></section>
+            <section class="judul">
+                <h1>BYD</h1>
+            </section>
+        </section>
+        <section class="p4">
+            <section class="gambar"></section>
+            <section class="judul">
+                <h1>MAXUS</h1>
+            </section>
+            <section class="caption">
+                
+                <p>
+                    Mifa 9 tampil sebagai konfigurasi paling mewah dari model tersebut. Modifikasi menyeluruh dilakukan, dimulai dari revisi captain seat di baris kedua, dilengkapi dengan partisi kabin antara penumpang belakang dan depan</p>
+                <p>
+                   Demi kenyamanan, partisi tersebut dilengkapi perangkat layar multimedia dan sistem intercom, memperkuat kesan eksklusif sekaligus memenuhi kebutuhan mobilitas eksekutif atau perjalanan keluarga mewah. Kustomisasi ini dilakukan oleh rumah modifikasi Lombardi, menempatkan Mifa 9 ke wilayah kendaraan yang fleksibel untuk disesuaikan dengan gaya hidup urban premium.
+                </p>
+            </section>
+        </section>
+        <section class="p5">
+            <section class="judul">
+                <h1>XPENG</h1>
+            </section>
+            <section class="caption">
+                <p>
+                   Xpeng mulai menarik perhatian publik ketika meluncurkan prototipe pertamanya berupa crossover listrik pada tahun 2016. Namun, desainnya menuai kritik karena dianggap memiliki kemiripan dengan Tesla.  
+                </p>
+                <p>
+                    XPeng X9 mengusung gaya MPV coupe-style yang bikin tampil beda dari MPV biasa. Pintu gesernya sudah elektrik, desain belakangnya melandai dengan LED bar yang cakep banget. Fitur kenyamanannya juara! Kursi baris kedua bisa direbahkan sampai full rebah alias graffiti mode, cocok buat perjalanan jauh. </p>
+                
+            </section>
+            <section class="gambar"></section>
+        </section>
+    </main>
+    <footer>
+        <section >
+            <img src="image/logotoyota.png" width="100px">
+            <img src="image/logonissan.png" width="100px">
+            <img src="image/logobyd.png" width="100px">
+            <img src="image/logomaxus.png" width="100px">
+            <img src="image/logoxpeng.png" width="100px">
+        </section>
+    </footer>
+</body>
+</html>

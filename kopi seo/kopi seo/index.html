@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Fore Coffee Pontianak</title>
+    <meta name="description" content="Toko kopi terenak di Pontianak. lokasi di Jalan Gajahmada">
+
+    <meta name="keywords" content="Kopi Fore, Fore Coffee, Kopi Terdekat, Kopi Pontianak">
+
+    <meta name="author" content="Praktikum Mata Kuliah Bisnis Digital">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .utama {
+        height: 120dvh;
+        width: 100dvw;
+        background-color: cornsilk;
+        flex-direction: column;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        padding: 30px;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(1, 87, 1);
+
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      main {
+        flex: 10;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pos1 {
+        flex: 1;
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .pos1 > section {
+        flex: 1;
+      }
+      .pos1 > .gambar {
+        flex: 1;
+        background-image: url("img/gambar1.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px 0px 0px 20px;
+        animation: animasigambar alternate infinite 10s;
+      }
+
+      .pos2 {
+        flex: 1;
+        background-color: rgb(1, 87, 1);
+        display: flex;
+        flex-direction: row;
+      }
+
+      .pos2 > section {
+        flex: 1;
+      }
+      .pos2 > .gambar {
+        flex: 1;
+        background-image: url("img/gambar2.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px 0px 0px 20px;
+      }
+
+      @keyframes animasigambar {
+        25% {
+          background-color: green;
+          transform: translateX(50px);
+        }
+        50% {
+          background-color: aliceblue;
+          transform: translateX(0px);
+        }
+        75% {
+          background-color: green;
+          transform: translateX(50px);
+        }
+        100% {
+          background-color: aliceblue;
+          transform: translateX(0px);
+        }
+      }
+
+      .pos1 > .judul {
+        padding: 5dvw;
+      }
+
+      .pos1 > .judul > h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        color: rgb(1, 87, 1);
+      }
+      .pos1 > .judul > p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2rem;
+      }
+
+      .pos2 > .judul {
+        padding: 5dvw;
+      }
+
+      .pos2 > .judul > h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        color: wheat;
+      }
+      .pos2 > .judul > p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5rem;
+        text-align: justify;
+        color: white;
+      }
+
+      footer {
+        flex: 2;
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: row;
+      }
+      footer > section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        background-color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        font-size: 30px;
+        border-color: transparent;
+        width: 400px;
+        height: 100px;
+        margin-left: 0px;
+        transition:
+          width 2s,
+          height 2s,
+          background-color 1s,
+          margin-left 2s;
+      }
+
+      button:hover {
+        background-color: rgb(1, 87, 1);
+        width: 600px;
+        height: 150px;
+        margin-left: 100px;
+      }
+
+      .promo {
+        font-size: 40px;
+        font-weight: bold;
+        color: red;
+      }
+      .harga {
+        font-size: 40px;
+        font-weight: bold;
+        color: hitam;
+      }
+      .produk {
+        font-size: 40px;
+        font-weight: bold;
+        color: hitam;
+        animation: animasiproduk alternate infinite 2s;
+      }
+
+      @keyframes animasiproduk {
+        0% {
+          color: red;
+        }
+        20% {
+          color: orange;
+        }
+        40% {
+          color: green;
+        }
+        60% {
+          color: blue;
+        }
+        80% {
+          color: purple;
+        }
+        100% {
+          color: brown;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="utama">
+      <header>
+        <nav>
+          <img class="logo" src="img/logo.png" width="80px" alt="gambar logo"/>
+          <a href="">About</a>
+          <a href="">Menu</a>
+          <a href="">Store</a>
+        </nav>
+      </header>
+      <main>
+        <section class="pos1">
+          <section class="judul">
+            <h1>Grind The Essentials</h1>
+            <p>
+              Dibuat dari biji kopi Indonesia pilihan untuk pengalaman minum
+              kopi terbaik setiap hari
+            </p>
+            <br />
+            <br /><br />
+            <label class="produk">Iced ButterScotch Sea Salt Latte</label>
+            <br />
+            <label class="promo"><del>Rp. 34.000</del></label>
+            <label class="harga">Rp. 10.000</label>
+            <br /><br />
+            <button>ORDER SEKARANG</button>
+          </section>
+          <section class="gambar"></section>
+        </section>
+        <section class="pos2">
+          <section class="gambar"></section>
+          <section class="judul">
+            <h1>OUR STORY</h1>
+            <p>
+              Didirikan pada tahun 2018, Fore Coffee adalah startup kopi yang
+              bercita-cita membuat kopi spesial terbaik untuk pelanggan. Seperti
+              nama kami yang diambil dari kata “Forest” atau hutan, kami ingin
+              tumbuh cepat, kuat, tinggi, dan menciptakan kehidupan di sekitar.
+              Kami ingin kehadiran kami bisa meningkatkan kualitas kopi dalam
+              komunitas kita. Dengan jaringan dan pengalaman, kami menggunakan
+              teknologi terkini unuk alat dan biji kopi kami. Diambil langsung
+              dari petani pilihan, biji kopi berkualitas tinggi diproses dan
+              dipanggang sempurna oleh kami, dan diajarkan kepada barista
+              kompeten kami, dengan semangat untuk menyajikan satu cangkir
+              kebahagiaan hanya untuk kamu.
+            </p>
+          </section>
+        </section>
+      </main>
+      <footer>
+        <section>
+          <img src="img/logo.png" srcset="" width="150px" alt="gambar logo"/>
+        </section>
+        <section>
+          <p>
+            Thamrin Plaza. Jl. M.H. Thamrin Kav. 8-9 Lt. PH. Kebon Melati, Tanah
+            Abang, Jakarta Pusat
+          </p>
+        </section>
+        <section>
+          <p>
+            Directorate General of Consumer Protection and Trade Compliance,
+            Ministry of Trade of the Republic of Indonesia
+          </p>
+        </section>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       p.tulisan1, h1.tulisan1{
+            color:aqua;
+        }
+        h1#tulisan1, h1#tulisan2{
+            color:blueviolet
+        }
+
+        .kotak1{
+            width: 100vw;
+            height: 100vh;
+            background-color: antiquewhite;
+            background-image: url(gambar.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+           
+        }
+
+        p.tulisan3{
+        text-align: right;
+        text-indent: 20px;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        color: black; 
+        background-color: beige;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+
+        }
+
+        .kotak2{
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: row;
+           /* sesuai arah*/
+            justify-content: end;
+           /* tegak lurus*/
+             align-items: end;
+             padding: 5px, 5px, 5px, 0px;
+             margin: 5px, 5px, 5px, 0px; 
+
+        }
+
+        .kecil{
+            width: 50px;
+            height: 50px;
+            background-color:black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="kotak1">
+       
+    </div>
+    <p class="tulisan1">Hello World</p>
+    <p class="tulisan2">Hello World 2</p>
+    <h1 id="tulisan1">Salam Kenal</h1>
+    <h1 id="tulisan2">Salam Kenal 2</h1>
+
+    <p class="tulisan3">
+    Teks merupakan teks yang berisi penjelasan dan penggambaran dari sesuatu.
+     Termasuk orang, benda, tempat, atau objek apapun berdasarkan pengalaman 
+     dan sudut pandang penulis.
+
+
+    </p>
+    <div class="kotak2">
+        <div class="kecil"></div>
+        <div class="kecil"></div>
+        <div class="kecil"></div>
+
+    </div>
+</body>
+</html>
